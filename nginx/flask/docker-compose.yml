@@ -1,0 +1,13 @@
+version: "3.8"
+services:
+  app:
+    build:
+      context: ./App
+      target: dev
+    volumes:
+      - ./App:/var/www/
+      - /tmp/uwsgi_log:/var/log/uwsgi
+    ports:
+      - "3000:3000"
+    environment:
+      TZ: "Asia/Tokyo"
