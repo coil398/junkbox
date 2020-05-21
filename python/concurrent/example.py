@@ -31,3 +31,14 @@ with ThreadPoolExecutor(2) as e:
 
 for res in ret:
     print('res: ', res)
+
+def synchronousFuncWrapper(d):
+    print('d: ', d)
+    res = synchronousFunc(Object=d[0], number=d[1])
+    return res
+
+with ThreadPoolExecutor(2) as e:
+    ret = e.map(synchronousFuncWrapper, [(dict(), number) for number in range(1, 6)])
+
+for res in ret:
+    print('res: ', res)
