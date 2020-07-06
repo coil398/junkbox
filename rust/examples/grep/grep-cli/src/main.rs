@@ -58,3 +58,17 @@ fn main() {
         }
     }
 }
+
+pub trait MatcherTrait {
+    fn execute(&self, line: &str) -> bool;
+}
+
+pub struct FixedStringsMatcher {
+    pattern: String,
+}
+
+impl FixedStringsMatcher {
+    pub fn new(pattern: String) -> FixedStringsMatcher {
+        FixedStringsMatcher { pattern: pattern }
+    }
+}
