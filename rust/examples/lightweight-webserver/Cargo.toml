@@ -8,7 +8,7 @@ edition = "2018"
 
 [dependencies]
 mio = { version = "0.7.0", features = ["os-poll", "tcp"]}
-regex = "1.3.9"
+regex = "1.5.5"
 log = "0.4.8"
 env_logger = "0.7.1"
 failure = "0.1.8"
